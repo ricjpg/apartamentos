@@ -18,8 +18,9 @@ class ApartamentoController extends Controller
     }
 
     public function respuesta(Request $request){
-        
-        $Duenios = DB::table('duenios')->join('apartamentos', 'duenios.idDuenio', '=', 'apartamentos.idDuenio')->get();
-        return view('consultaApartamentoResultado', compact('Duenios'));
+        $datoApp = Apartamento::find($request->input('id'));
+        $Apartamento = Duenio::where("idDuenio","$datoApp->idDuenio")->get();
+        // $Duenios = DB::table('duenios')->join('apartamentos', 'duenios.idDuenio', '=', 'apartamentos.idDuenio')->get();
+        return view('consultaApartamentoResultado', compact('Apartamento', 'datoApp'));
     }
 }

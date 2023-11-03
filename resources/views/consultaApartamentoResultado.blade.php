@@ -20,8 +20,9 @@
             
             </tr>
         </thead>
-
-        @foreach ($Duenios as $item)
+        <span>Datos del apartamento: </span>
+        <span>{{$datoApp}}</span>
+        @foreach ($Apartamento as $item)
         <tbody>
             <tr>
             <th scope="row">{{$item->idDuenio}}</th>
