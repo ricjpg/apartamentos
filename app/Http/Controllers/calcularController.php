@@ -10,6 +10,7 @@ class calcularController extends Controller
     public function index(){
         return view('calcular');
     }
+
     public function calcular(Request $request){
         $Piso = $request->input('Piso');
         $mtSqrt = $request->input('mtSqrt');
@@ -57,4 +58,6 @@ class calcularController extends Controller
         }
         return view('resultado', compact('Resultado'));
     }
+
+    
 }
